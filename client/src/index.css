@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Kenia&family=Montserrat:wght@100&family=Noto+Sans+Chakma&display=swap");
+
+* {
+  font-family: "Kenia", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-family: "Noto Sans Chakma", sans-serif;
+}
+
+/* antd override */
+input {
+  border-radius: 2px;
+  border: 1px solid rgba(128, 128, 128, 0.514) !important;
+  height: 40px !important;
+}
+
+input:focus,
+.ant-picker {
+  outline: none !important;
+  box-shadow: none !important;
+  border: 1px solid grey !important;
+}
+
+label {
+  font-size: 16px !important;
+  color: black;
+}
+.heading {
+  color: white;
+}
+.ant-from-item {
+  margin: 10px 0 !important;
+}
+.normal-text {
+  font-size: 1rem;
+}
+.ant-picker-input input {
+  border: none !important;
+}
+.ant-picker {
+  height: 40px !important;
+  border-radius: 2px;
+  border: 1px solid rgba(128, 128, 128, 0.514) !important;
+  height: 40px !important;
+}
+/* Common styling */
+.spinner-parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  opacity: 0.8;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+p {
+  color: rgba(0, 0, 0, 0.637) imo !important;
+  margin-top: 3px !important;
+  padding: 0 !important;
+}
+.spinner-border {
+  width: 5rem;
+  height: 5rem;
+  color: white !important;
+}
+.page-title {
+  font-style: 25px;
+  color: rgba(0, 0, 0, 0.822);
+  font-weight: bold;
+}
+.card {
+  box-shadow: 0 0 2px rgb(189, 187, 187);
+  border-radius: 0 !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.card-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.534);
+}
+
+.primary-button {
+  background-color: rgb(25, 129, 98) !important;
+  border-color: rgb(25, 129, 98) !important;
+  height: 40px;
+  width: 100%;
+  color: white !important;
+  font-size: 16px !important;
+  width: max-content !important;
+}
+
+.anchor {
+  color: black !important;
+  text-decoration: underline;
+  font-size: 16px !important;
+  cursor: pointer;
+}
+
+.anchor:hover {
+  text-decoration: underline;
+}
+
+/* authentication pages */
+.authentication {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(25, 129, 98);
+}
+
+.authentication-form {
+  width: 400px;
+}
+
+.authentication .card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  max-width: max-content !important;
+  padding: 7px 15px;
+}

@@ -55,14 +55,18 @@ function DoctorAppointments() {
       ),
     },
     {
+      title: "status",
+      dataIndex: "status",
+    },
+    {
       title: "Actions",
       dataIndex: "actions",
       render: (text, record) => (
         <div className="d-flex">
           {record.status === "pending" && (
-            <div>
+            <div className="d-flex ">
               <h1
-                className="anchor"
+                className="anchor px-2"
                 onClick={() => changeAppointmentStatus(record, "approved")}
               >
                 Approve
@@ -78,18 +82,17 @@ function DoctorAppointments() {
         </div>
       ),
     },
-    {
-      title: "status",
-      dataIndex: "status",
-    },
   ];
 
   const changeAppointmentStatus = async (record, status) => {
     try {
       dispatch(showLoading());
       const response = await axios.post(
-        "/api/doctor/appointment-status",
-        { appointmentId: record._id, status: status },
+        "/api/doctor/change-appointment-status",
+        {
+          appointmentId: record._id,
+          status: status,
+        },
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,

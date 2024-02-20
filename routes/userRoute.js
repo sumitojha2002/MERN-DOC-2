@@ -159,7 +159,7 @@ router.post("/delete-all-notifications", authMiddleware, async (req, res) => {
     updatedUser.password = undefined;
     res.status(200).send({
       success: true,
-      message: "All notifications marked as seen",
+      message: "All notifications cleared",
       data: updatedUser,
     });
   } catch (error) {
@@ -195,7 +195,7 @@ router.post("/book-appointment", authMiddleware, async (req, res) => {
     req.body.status = "pending";
     req.body.date = moment(req.body.date, "DD-MM-YYYY").toISOString();
     req.body.time = moment(req.body.time, "HH:mm").toISOString();
-    const newAppoinment = new Appoinment(req.body);
+    const newAppoinment = new Appointment(req.body);
     await newAppoinment.save();
     const user = await User.findOne({ _id: req.body.doctorInfo.userId });
     user.unseenNotification.push({
@@ -205,7 +205,7 @@ router.post("/book-appointment", authMiddleware, async (req, res) => {
     });
     await user.save();
     res.status(200).send({
-      message: "Appoinemnt booked successfully",
+      message: "Appointment booked successfully",
       success: true,
     });
   } catch (error) {

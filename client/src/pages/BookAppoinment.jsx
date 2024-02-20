@@ -110,12 +110,32 @@ function BookAppoinment() {
             {doctor.firstName} {doctor.lastName}
           </h1>
           <hr />
-          <Row>
+          <Row gutter={20} className="mt-5" align="middle">
+            <Col span={12} sm={24} xs={24} lg={8}>
+              <img
+                src="https://img.freepik.com/premium-vector/book-now-button-with-cursor-pointer-click-vector-web-button_123447-5471.jpg"
+                alt=""
+                width="100%"
+                height="400"
+              />
+            </Col>
             <Col span={12} sm={24} xs={24} lg={8}>
               <h1 className="normal-text">
                 <b>Timings: </b>
                 {doctor.timings[0]} - {doctor.timings[1]}
               </h1>
+              <p>
+                <b>Phone Number : </b>
+                {doctor.phoneNumber}
+              </p>
+              <p>
+                <b>Address : </b>
+                {doctor.address}
+              </p>
+              <p>
+                <b>Fee per visit : </b>
+                {doctor.feePerCunsultaion}
+              </p>
               <div className="d-flex flex-column pt-2">
                 <DatePicker
                   format="DD-MM-YYYY"
@@ -132,12 +152,14 @@ function BookAppoinment() {
                     setTime(moment(value)._i.format("HH:mm"));
                   }}
                 />
-                <Button
-                  className="primary-button mt-3 full-width-button"
-                  onClick={checkAvailability}
-                >
-                  Check Availability
-                </Button>
+                {!isAvailable && (
+                  <Button
+                    className="primary-button mt-3 full-width-button"
+                    onClick={checkAvailability}
+                  >
+                    Check Availability
+                  </Button>
+                )}
                 {isAvailable && (
                   <Button
                     className="primary-button mt-3 full-width-button"

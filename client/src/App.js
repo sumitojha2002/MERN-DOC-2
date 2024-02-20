@@ -14,6 +14,8 @@ import Userslist from "./pages/Admin/Userslist";
 import Doctorslist from "./pages/Admin/Doctorslist";
 import Profile from "./pages/Doctor/Profile";
 import BookAppoinment from "./pages/BookAppoinment";
+import Appointments from "./pages/Appointments";
+import DoctorAppointments from "./pages/Doctor/DoctorAppointments";
 
 function App() {
   const { loading } = useSelector((state) => state.alerts);
@@ -83,6 +85,22 @@ function App() {
           }
         />
         <Route
+          path="/appointments"
+          element={
+            <ProtectedRoute>
+              <Appointments />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/doctor/appointments"
+          element={
+            <ProtectedRoute>
+              <DoctorAppointments />
+            </ProtectedRoute>
+          }
+        />
+        <Route
           path="/doctor/profile/:userId"
           element={
             <ProtectedRoute>
@@ -99,6 +117,7 @@ function App() {
           }
         />
       </Routes>
+      
     </BrowserRouter>
   );
 }

@@ -7,6 +7,7 @@ import { hideLoading, showLoading } from "../redux/alertsSlice";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { setUser } from "../redux/userSlice";
+
 function Notification() {
   const { user } = useSelector((state) => state.user);
   const navigate = useNavigate();

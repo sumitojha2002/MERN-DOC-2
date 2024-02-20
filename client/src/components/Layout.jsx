@@ -40,8 +40,8 @@ function Layout({ children }) {
       icon: "ri-home-line",
     },
     {
-      name: "Appoinments",
-      path: "/appoinments",
+      name: "Appointments",
+      path: "/appointments",
       icon: "ri-file-list-line",
     },
     {
@@ -58,8 +58,8 @@ function Layout({ children }) {
       icon: "ri-home-line",
     },
     {
-      name: "Appoinments",
-      path: "/appoinments",
+      name: "Appointments",
+      path: "/doctor/appointments",
       icon: "ri-file-list-line",
     },
     {
